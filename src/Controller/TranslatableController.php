@@ -19,10 +19,8 @@ class TranslatableController extends AbstractController
     {
         $translatableListener->setDefaultLocale('en');
         $translatableListener->setTranslationFallback(true);
-        
-        dump(
-            $em->getRepository(Article::class)->findWithOrder()
-        );
+
+        $articles = $em->getRepository(Article::class)->findWithOrder();
         
         return $this->render('translatable/index.html.twig', [
             'controller_name' => 'TranslatableController',

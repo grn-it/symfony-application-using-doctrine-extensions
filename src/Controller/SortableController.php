@@ -17,8 +17,6 @@ class SortableController extends AbstractController
             ['sortableGroup' => 'Group #1']
         );
 
-        dump($articles);
-        
         return $this->render('sortable/index.html.twig', [
             'controller_name' => 'SortableController',
         ]);

@@ -6,7 +6,6 @@ use App\Entity\CategoryClosure;
 use App\Entity\CategoryMaterializedPath;
 use App\Entity\CategoryTree;
 use Doctrine\ORM\EntityManagerInterface;
-use Gedmo\Tree\Entity\Repository\ClosureTreeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,11 +16,9 @@ class TreeController extends AbstractController
     public function index(EntityManagerInterface $em): Response
     {
         $categoryRepository = $em->getRepository(CategoryTree::class);
-        
-        dump(
-            $categoryRepository->children(
-                $em->getRepository(CategoryTree::class)->find(1)
-            )
+
+        $categoryTree = $categoryRepository->children(
+            $em->getRepository(CategoryTree::class)->find(1)
         );
 
         return $this->render('tree/index.html.twig', [
@@ -32,9 +29,10 @@ class TreeController extends AbstractController
     #[Route('/tree/materialized-path')]
     public function materializedPath(EntityManagerInterface $em): Response
     {
-        dump(
-            $em->getRepository(CategoryMaterializedPath::class)->find(3)->getPath()
-        );
+        $categoryMaterializedPath =$em->getRepository(CategoryMaterializedPath::class)
+            ->find(3)
+            ->getPath()
+        ;
 
         return $this->render('tree/index.html.twig', [
             'controller_name' => 'TreeController',
@@ -44,9 +42,9 @@ class TreeController extends AbstractController
     #[Route('/tree/closure')]
     public function closure(EntityManagerInterface $em): Response
     {
-        dump(
-            $em->getRepository(CategoryClosure::class)->getChildren(includeNode: true)
-        );
+        $categoryClosure = $em->getRepository(CategoryClosure::class)
+            ->getChildren(includeNode: true)
+        ;
 
         return $this->render('tree/index.html.twig', [
             'controller_name' => 'TreeController',
