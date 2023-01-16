@@ -1,6 +1,6 @@
 # Symfony Application Using Doctrine Extensions
 
-The project demonstrates the features of [DoctrineExtensions](https://github.com/doctrine-extensions/DoctrineExtensions) integrated with Symfony via the [StofDoctrineExtensionsBundle](https://github.com/stof/StofDoctrineExtensionsBundle).  
+Sample application showing features of [DoctrineExtensions](https://github.com/doctrine-extensions/DoctrineExtensions) integrated with Symfony via the [StofDoctrineExtensionsBundle](https://github.com/stof/StofDoctrineExtensionsBundle).  
 
 ## How to Install
 ```bash
