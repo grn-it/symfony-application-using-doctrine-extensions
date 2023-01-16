@@ -2,6 +2,11 @@
 
 The project demonstrates the features of [DoctrineExtensions](https://github.com/doctrine-extensions/DoctrineExtensions) integrated with Symfony via the [StofDoctrineExtensionsBundle](https://github.com/stof/StofDoctrineExtensionsBundle).  
 
+## How to Install
+```bash
+make instal
+```
+
 DoctrineExtensions has the following features:  
 <b>Blameable</b> - user in `createdBy`, `updatedBy`  
 <b>Loggable</b> - multiple versions of entity data  
