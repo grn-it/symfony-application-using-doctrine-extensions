@@ -80,9 +80,7 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts",
-            "symfony console doctrine:migrations:migrate -n",
-            "symfony console app:fixtures:load -n"
+            "@auto-scripts"
         ],
         "post-update-cmd": [
             "@auto-scripts"
