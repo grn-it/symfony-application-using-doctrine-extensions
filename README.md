@@ -16,5 +16,5 @@ DoctrineExtensions has the following features:
 <b>Tree</b> - creates a tree structure (an entity has an ancestor and children)  
 <b>IpTraceable</b> - user ip-address in `createdFromIp`, `updatedFromIp`  
 <b>SoftDeleteable</b> - when deleting the entity is not deleted, but the deletion time is stored in `deletedAt`  
-<b>Sortable</b> - manual sorting of entities by setting element position  
+<b>Sortable</b> - manual sorting of entities by setting entity position  
 <b>Uploadable</b> - uploading and storing files
