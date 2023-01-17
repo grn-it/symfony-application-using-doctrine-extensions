@@ -11,11 +11,12 @@ class FileControllerTest extends WebTestCase
     public function testFile(): void
     {
         $client = static::createClient();
-
+        $filePath = __DIR__.'/test.jpg';
+        
         $crawler = $client->request(
             'POST',
             '/file',
-            files: [$this->createUploadedFile(__DIR__.'/test.jpg')]
+            files: [$this->createUploadedFile($filePath)]
         );
 
         $this->assertResponseIsSuccessful();
